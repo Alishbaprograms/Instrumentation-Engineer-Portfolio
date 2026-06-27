@@ -5,10 +5,10 @@ import { Zap } from "lucide-react";
 export default function Footer() {
   return (
     <footer
-      className="relative py-12 px-6 border-t"
+      className="relative py-12 border-t"
       style={{ borderColor: "rgba(0,200,255,0.08)" }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
         {/* Quote */}
         <div className="text-center mb-8">
           <blockquote
