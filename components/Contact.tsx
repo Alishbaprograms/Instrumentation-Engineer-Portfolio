@@ -1,20 +1,27 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
 
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 28 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-60px" },
+  transition: { duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] },
+});
+
 const LinkedInIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
     <rect x="2" y="9" width="4" height="12" />
     <circle cx="4" cy="4" r="2" />
   </svg>
 );
 
-const GithubIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+const PhoneIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.6 4.87 2 2 0 0 1 3.57 2.7h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.4a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 18z"/>
   </svg>
 );
 
@@ -27,32 +34,30 @@ const links = [
     color: "#0A66C2",
   },
   {
-    icon: <GithubIcon />,
-    label: "GitHub",
-    value: "github.com/zainab-rafi",
-    href: "https://github.com/zainab-rafi",
-    color: "#8899AA",
-  },
-  {
-    icon: <Mail size={20} />,
+    icon: <Mail size={18} />,
     label: "Email",
-    value: "zainab.rafi@engineer.com",
-    href: "mailto:zainab.rafi@engineer.com",
+    value: "rafizainab7817@gmail.com",
+    href: "mailto:rafizainab7817@gmail.com",
     color: "#00C8FF",
   },
   {
-    icon: <MapPin size={20} />,
-    label: "Location",
-    value: "Pakistan",
-    href: null,
+    icon: <PhoneIcon />,
+    label: "Phone",
+    value: "+92 335 2238647",
+    href: "tel:+923352238647",
     color: "#00D084",
+  },
+  {
+    icon: <MapPin size={18} />,
+    label: "Location",
+    value: "Karachi, Sindh",
+    href: null,
+    color: "#FF9F43",
   },
 ];
 
 export default function Contact() {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
+  const formRef = useRef<HTMLFormElement>(null);
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -68,59 +73,43 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 sm:px-10 lg:px-16 relative" ref={ref}>
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse at 50% 0%, rgba(0,200,255,0.05) 0%, transparent 60%)",
-        }}
-        aria-hidden="true"
-      />
+    <section id="contact" className="py-28 px-6 sm:px-10 lg:px-16 relative">
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(0,200,255,0.04) 0%, transparent 60%)" }} aria-hidden="true" />
 
       <div className="max-w-6xl mx-auto relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+        <motion.div {...fadeUp()} className="text-center mb-20">
           <span className="section-label">Get In Touch</span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-3 text-white">
             Let's <span className="text-gradient-blue">Connect</span>
           </h2>
-          <p className="text-[#8899AA] mt-4 max-w-xl mx-auto text-sm leading-relaxed">
-            Open to instrumentation engineering roles, industrial automation projects,
-            and collaborative opportunities in process control and reliability engineering.
+          <p className="text-[#8899AA] mt-4 max-w-md mx-auto text-sm leading-relaxed">
+            Open to instrumentation engineering roles, industrial automation projects, and collaborative opportunities in process control.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Links */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="space-y-4"
-          >
-            <h3 className="text-xl font-bold text-white mb-6">Contact Information</h3>
+        <div className="grid lg:grid-cols-2 gap-10">
+          {/* Info */}
+          <motion.div {...fadeUp(0.1)} className="space-y-3">
+            <h3 className="text-lg font-bold text-white mb-5">Contact Information</h3>
             {links.map((link, i) => (
               <motion.div
                 key={link.label}
                 initial={{ opacity: 0, x: -20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.12 + i * 0.08, ease: "easeOut" }}
               >
                 {link.href ? (
                   <a
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="glass-card flex items-center gap-4 p-4 hover:border-[rgba(0,200,255,0.3)] hover:scale-[1.02] transition-all duration-300 block"
+                    className="glass-card flex items-center gap-4 p-4 hover:border-[rgba(0,200,255,0.28)] hover:translate-y-[-2px] transition-all duration-300 block"
                     aria-label={`${link.label}: ${link.value}`}
                   >
                     <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                      style={{ background: `${link.color}15`, color: link.color, border: `1px solid ${link.color}25` }}
+                      className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ background: `${link.color}12`, color: link.color, border: `1px solid ${link.color}25` }}
                     >
                       {link.icon}
                     </div>
@@ -132,8 +121,8 @@ export default function Contact() {
                 ) : (
                   <div className="glass-card flex items-center gap-4 p-4">
                     <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                      style={{ background: `${link.color}15`, color: link.color, border: `1px solid ${link.color}25` }}
+                      className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ background: `${link.color}12`, color: link.color, border: `1px solid ${link.color}25` }}
                     >
                       {link.icon}
                     </div>
@@ -146,81 +135,52 @@ export default function Contact() {
               </motion.div>
             ))}
 
-            {/* Availability Badge */}
-            <div
-              className="glass-card p-5 mt-6"
-              style={{ border: "1px solid rgba(0,208,132,0.2)" }}
+            {/* Availability */}
+            <motion.div
+              {...fadeUp(0.42)}
+              className="glass-card p-5 mt-2"
+              style={{ border: "1px solid rgba(0,208,132,0.18)" }}
             >
-              <div className="flex items-center gap-3 mb-2">
-                <div
-                  className="w-2.5 h-2.5 rounded-full bg-[#00D084]"
-                  style={{ animation: "pulse-glow 2s ease-in-out infinite" }}
-                />
+              <div className="flex items-center gap-2.5 mb-2">
+                <div className="w-2 h-2 rounded-full bg-[#00D084]" style={{ animation: "pulse-glow 2s ease-in-out infinite" }} />
                 <span className="font-semibold text-white text-sm">Open to Opportunities</span>
               </div>
               <p className="text-[#8899AA] text-xs leading-relaxed">
-                Currently gaining hands-on experience at Engro Fertilizers while actively exploring
-                advanced roles in instrumentation, control systems, and industrial automation globally.
+                Currently at Engro Fertilizers while actively exploring advanced roles in instrumentation, control systems, and industrial automation globally.
               </p>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            <form onSubmit={handleSubmit} className="glass-card p-6 sm:p-8 space-y-5">
-              <h3 className="text-xl font-bold text-white mb-6">Send a Message</h3>
+          <motion.div {...fadeUp(0.18)}>
+            <form ref={formRef} onSubmit={handleSubmit} className="glass-card p-6 sm:p-8 space-y-4" style={{ border: "1px solid rgba(0,200,255,0.12)" }}>
+              <h3 className="text-lg font-bold text-white mb-2">Send a Message</h3>
 
               <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-xs font-medium text-[#8899AA] mb-2 uppercase tracking-wider">
-                    Full Name
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    required
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-[#8899AA] outline-none transition-all"
-                    style={{
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(0,200,255,0.15)",
-                    }}
-                    onFocus={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.5)")}
-                    onBlur={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.15)")}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-xs font-medium text-[#8899AA] mb-2 uppercase tracking-wider">
-                    Email Address
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="your@email.com"
-                    className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-[#8899AA] outline-none transition-all"
-                    style={{
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(0,200,255,0.15)",
-                    }}
-                    onFocus={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.5)")}
-                    onBlur={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.15)")}
-                  />
-                </div>
+                {[
+                  { id: "name", label: "Full Name", type: "text", placeholder: "Your Name", key: "name" },
+                  { id: "email", label: "Email", type: "email", placeholder: "your@email.com", key: "email" },
+                ].map((f) => (
+                  <div key={f.id}>
+                    <label htmlFor={f.id} className="block text-[10px] font-bold text-[#8899AA] mb-1.5 uppercase tracking-wider">{f.label}</label>
+                    <input
+                      id={f.id}
+                      type={f.type}
+                      required
+                      value={form[f.key as keyof typeof form]}
+                      onChange={(e) => setForm({ ...form, [f.key]: e.target.value })}
+                      placeholder={f.placeholder}
+                      className="w-full px-4 py-2.5 rounded-xl text-sm text-white placeholder-[#8899AA] outline-none transition-all"
+                      style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(0,200,255,0.12)" }}
+                      onFocus={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.45)")}
+                      onBlur={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.12)")}
+                    />
+                  </div>
+                ))}
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-xs font-medium text-[#8899AA] mb-2 uppercase tracking-wider">
-                  Subject
-                </label>
+                <label htmlFor="subject" className="block text-[10px] font-bold text-[#8899AA] mb-1.5 uppercase tracking-wider">Subject</label>
                 <input
                   id="subject"
                   type="text"
@@ -228,20 +188,15 @@ export default function Contact() {
                   value={form.subject}
                   onChange={(e) => setForm({ ...form, subject: e.target.value })}
                   placeholder="e.g. Collaboration Opportunity"
-                  className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-[#8899AA] outline-none transition-all"
-                  style={{
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(0,200,255,0.15)",
-                  }}
-                  onFocus={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.5)")}
-                  onBlur={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.15)")}
+                  className="w-full px-4 py-2.5 rounded-xl text-sm text-white placeholder-[#8899AA] outline-none transition-all"
+                  style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(0,200,255,0.12)" }}
+                  onFocus={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.45)")}
+                  onBlur={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.12)")}
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-xs font-medium text-[#8899AA] mb-2 uppercase tracking-wider">
-                  Message
-                </label>
+                <label htmlFor="message" className="block text-[10px] font-bold text-[#8899AA] mb-1.5 uppercase tracking-wider">Message</label>
                 <textarea
                   id="message"
                   required
@@ -249,37 +204,25 @@ export default function Contact() {
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="Tell me about your project or opportunity..."
-                  className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-[#8899AA] outline-none transition-all resize-none"
-                  style={{
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(0,200,255,0.15)",
-                  }}
-                  onFocus={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.5)")}
-                  onBlur={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.15)")}
+                  className="w-full px-4 py-2.5 rounded-xl text-sm text-white placeholder-[#8899AA] outline-none transition-all resize-none"
+                  style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(0,200,255,0.12)" }}
+                  onFocus={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.45)")}
+                  onBlur={(e) => (e.target.style.borderColor = "rgba(0,200,255,0.12)")}
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={loading || sent}
-                className="w-full btn-primary flex items-center justify-center gap-2 text-sm font-semibold py-3.5 disabled:opacity-60"
+                className="w-full btn-primary flex items-center justify-center gap-2 text-sm font-semibold py-3 disabled:opacity-60"
                 aria-label="Send message"
               >
                 {sent ? (
-                  <>
-                    <CheckCircle2 size={18} />
-                    Message Sent!
-                  </>
+                  <><CheckCircle2 size={17} />Message Sent!</>
                 ) : loading ? (
-                  <>
-                    <span className="w-4 h-4 border-2 border-[#0B1220] border-t-transparent rounded-full animate-spin" />
-                    Sending...
-                  </>
+                  <><span className="w-4 h-4 border-2 border-[#0B1220] border-t-transparent rounded-full animate-spin" />Sending...</>
                 ) : (
-                  <>
-                    <Send size={18} />
-                    Send Message
-                  </>
+                  <><Send size={17} />Send Message</>
                 )}
               </button>
             </form>

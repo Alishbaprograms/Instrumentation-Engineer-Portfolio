@@ -150,7 +150,7 @@ export default function Hero() {
             style={{ animation: "pulse-glow 2s ease-in-out infinite" }}
           />
           <span className="text-[#8899AA]">Available for Opportunities</span>
-          <span className="text-[#00C8FF] font-medium">· Engro Fertilizers, Pakistan</span>
+          <span className="text-[#00C8FF] font-medium">· Karachi, Sindh</span>
         </motion.div>
 
         {/* Name */}
