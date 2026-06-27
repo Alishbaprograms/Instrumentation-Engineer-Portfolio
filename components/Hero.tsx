@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { Download, Eye, ChevronDown } from "lucide-react";
+import { Eye, ChevronDown } from "lucide-react";
 import HeroBackground from "./HeroBackground";
 import { useEffect, useState } from "react";
 
@@ -206,15 +206,6 @@ export default function Hero() {
           >
             <Eye size={18} />
             View Projects
-          </a>
-          <a
-            href="/resume.pdf"
-            className="btn-secondary flex items-center gap-2 text-base"
-            aria-label="Download Resume"
-            download
-          >
-            <Download size={18} />
-            Download Resume
           </a>
         </motion.div>
 
