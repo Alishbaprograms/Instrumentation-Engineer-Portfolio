@@ -36,10 +36,10 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-28 px-6 sm:px-10 lg:px-16 relative">
+    <section id="experience" className="py-28 relative">
       <div className="absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none" style={{ background: "radial-gradient(ellipse at 0% 50%, rgba(0,200,255,0.03) 0%, transparent 70%)" }} aria-hidden="true" />
 
-      <div className="max-w-3xl mx-auto relative">
+      <div className="relative" style={{ maxWidth: "768px", margin: "0 auto", padding: "0 24px" }}>
         {/* Header */}
         <motion.div {...fadeUp()} className="text-center mb-20">
           <span className="section-label">Career</span>

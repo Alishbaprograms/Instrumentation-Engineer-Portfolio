@@ -134,7 +134,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 w-full flex flex-col items-center text-center px-6 sm:px-10">
+      <div className="relative z-10 flex flex-col items-center text-center px-6" style={{ width: "100%", maxWidth: "800px", margin: "0 auto" }}>
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

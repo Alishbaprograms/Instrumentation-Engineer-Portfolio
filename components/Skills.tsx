@@ -45,10 +45,10 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-28 px-6 sm:px-10 lg:px-16 relative">
+    <section id="skills" className="py-28 relative">
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(0,200,255,0.03) 0%, transparent 60%)" }} aria-hidden="true" />
 
-      <div className="max-w-6xl mx-auto relative">
+      <div className="relative" style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 24px" }}>
         <motion.div {...fadeUp()} className="text-center mb-20">
           <span className="section-label">Expertise</span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-3 text-white">

@@ -12,8 +12,8 @@ const fadeUp = (delay = 0) => ({
 
 export default function Education() {
   return (
-    <section id="education" className="py-28 px-6 sm:px-10 lg:px-16 relative">
-      <div className="max-w-3xl mx-auto">
+    <section id="education" className="py-28 relative">
+      <div style={{ maxWidth: "768px", margin: "0 auto", padding: "0 24px" }}>
         <motion.div {...fadeUp()} className="text-center mb-20">
           <span className="section-label">Academic Background</span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-3 text-white">

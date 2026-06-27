@@ -137,10 +137,10 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-28 px-6 sm:px-10 lg:px-16 relative">
+    <section id="projects" className="py-28 relative">
       <div className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none" style={{ background: "radial-gradient(ellipse at 100% 50%, rgba(0,208,132,0.03) 0%, transparent 70%)" }} aria-hidden="true" />
 
-      <div className="max-w-6xl mx-auto relative">
+      <div className="relative" style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 24px" }}>
         <motion.div {...fadeUp()} className="text-center mb-20">
           <span className="section-label">Portfolio</span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-3 text-white">

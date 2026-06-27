@@ -48,11 +48,11 @@ function AnimatedCounter({ target, suffix }: { target: number; suffix: string })
 
 export default function About() {
   return (
-    <section id="about" className="py-28 px-6 sm:px-10 lg:px-16 relative">
+    <section id="about" className="py-28 relative">
       {/* Subtle radial accent */}
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 20% 50%, rgba(0,200,255,0.04) 0%, transparent 60%)" }} aria-hidden="true" />
 
-      <div className="max-w-6xl mx-auto relative">
+      <div className="relative" style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 24px" }}>
         {/* Header */}
         <motion.div {...fadeUp()} className="text-center mb-20">
           <span className="section-label">About Me</span>
