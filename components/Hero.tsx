@@ -134,10 +134,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content */}
-      <motion.div
-        style={{ rotateX, rotateY, transformPerspective: 1200 }}
-        className="relative z-10 text-center px-6 max-w-5xl mx-auto"
-      >
+      <div className="relative z-10 w-full flex flex-col items-center text-center px-6 sm:px-10">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -145,10 +142,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="inline-flex items-center gap-2 glass-card px-4 py-2 mb-8 text-sm"
         >
-          <span
-            className="w-2 h-2 rounded-full bg-[#00D084]"
-            style={{ animation: "pulse-glow 2s ease-in-out infinite" }}
-          />
+          <span className="w-2 h-2 rounded-full bg-[#00D084]" style={{ animation: "pulse-glow 2s ease-in-out infinite" }} />
           <span className="text-[#8899AA]">Available for Opportunities</span>
           <span className="text-[#00C8FF] font-medium">· Karachi, Sindh</span>
         </motion.div>
@@ -158,14 +152,14 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4"
+          className="text-6xl sm:text-7xl md:text-8xl font-bold tracking-tight mb-4 leading-none"
         >
           <span className="text-white">Zainab</span>
           <br />
           <span className="text-gradient-multi">Rafi</span>
         </motion.h1>
 
-        {/* Typewriter Title */}
+        {/* Typewriter */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -182,18 +176,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.65 }}
-          className="text-[#8899AA] text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-[#8899AA] text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed"
         >
           Designing reliable industrial automation systems, troubleshooting mission-critical
           equipment, and improving process reliability through modern control engineering.
         </motion.p>
 
-        {/* CTAs */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
             href="#projects"
@@ -201,7 +194,7 @@ export default function Hero() {
               e.preventDefault();
               document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="btn-primary flex items-center gap-2 text-base"
+            className="btn-primary inline-flex items-center gap-2 text-base px-8 py-3"
             aria-label="View Projects"
           >
             <Eye size={18} />
@@ -214,7 +207,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto"
+          className="mt-14 grid grid-cols-3 gap-4 w-full max-w-md"
         >
           {[
             { value: "20–30", label: "Monthly Work Orders" },
@@ -230,7 +223,7 @@ export default function Hero() {
             </div>
           ))}
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Scroll indicator */}
       <motion.div
