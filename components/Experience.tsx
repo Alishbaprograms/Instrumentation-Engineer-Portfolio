@@ -33,7 +33,7 @@ export default function Experience() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="experience" className="py-24 px-6 relative" ref={ref}>
+    <section id="experience" className="py-24 px-6 sm:px-10 lg:px-16 relative" ref={ref}>
       {/* Background accent */}
       <div
         className="absolute left-0 top-0 bottom-0 w-1/2 pointer-events-none"
@@ -58,10 +58,11 @@ export default function Experience() {
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative">
+        <div className="relative" style={{ paddingLeft: "16px" }}>
           {/* Vertical line */}
           <div
-            className="absolute left-6 sm:left-8 top-0 bottom-0 w-px timeline-line opacity-30"
+            className="absolute top-0 bottom-0 w-px timeline-line opacity-30"
+            style={{ left: "36px" }}
             aria-hidden="true"
           />
 
@@ -71,12 +72,14 @@ export default function Experience() {
               initial={{ opacity: 0, x: -40 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.7, delay: i * 0.15 }}
-              className="relative pl-16 sm:pl-20 mb-12"
+              className="relative mb-12"
+              style={{ paddingLeft: "72px" }}
             >
               {/* Timeline dot */}
               <div
-                className="absolute left-3.5 sm:left-5 top-5 w-5 h-5 rounded-full flex items-center justify-center"
+                className="absolute top-5 w-5 h-5 rounded-full flex items-center justify-center"
                 style={{
+                  left: "26px",
                   background: exp.current ? exp.color : "rgba(255,255,255,0.1)",
                   boxShadow: exp.current ? `0 0 12px ${exp.color}66` : "none",
                 }}
@@ -87,7 +90,7 @@ export default function Experience() {
 
               {/* Card */}
               <div
-                className="glass-card p-6 sm:p-8 hover:border-[rgba(0,200,255,0.25)] transition-all duration-300 group"
+                className="glass-card p-6 hover:border-[rgba(0,200,255,0.25)] transition-all duration-300 group"
                 style={{ border: `1px solid ${exp.current ? "rgba(0,200,255,0.2)" : "rgba(255,255,255,0.06)"}` }}
               >
                 {/* Top row */}

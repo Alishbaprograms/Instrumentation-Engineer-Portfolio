@@ -176,7 +176,7 @@ export default function Projects() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="projects" className="py-24 px-6 relative" ref={ref}>
+    <section id="projects" className="py-24 px-6 sm:px-10 lg:px-16 relative" ref={ref}>
       <div
         className="absolute right-0 top-0 bottom-0 w-1/2 pointer-events-none"
         style={{ background: "radial-gradient(ellipse at 100% 50%, rgba(0,208,132,0.03) 0%, transparent 70%)" }}

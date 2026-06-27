@@ -68,7 +68,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 relative" ref={ref}>
+    <section id="contact" className="py-24 px-6 sm:px-10 lg:px-16 relative" ref={ref}>
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

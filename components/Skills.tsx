@@ -77,7 +77,7 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="skills" className="py-24 px-6 relative" ref={ref}>
+    <section id="skills" className="py-24 px-6 sm:px-10 lg:px-16 relative" ref={ref}>
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
