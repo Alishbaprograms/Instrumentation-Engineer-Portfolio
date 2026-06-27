@@ -29,7 +29,7 @@ export default function Footer() {
             <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[#00C8FF] to-[#0080FF] flex items-center justify-center">
               <Zap size={12} className="text-[#0B1220]" />
             </div>
-            <span className="font-bold text-sm text-white">Muhammad Karam</span>
+            <span className="font-bold text-sm text-white">Zainab Rafi</span>
             <span className="text-[#8899AA] text-xs">· Instrumentation & Controls Engineer</span>
           </div>
           <div className="text-[#8899AA] text-xs">

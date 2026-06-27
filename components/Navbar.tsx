@@ -61,7 +61,7 @@ export default function Navbar() {
             <Zap size={16} className="text-[#0B1220]" />
           </div>
           <span className="font-bold text-lg tracking-tight text-white">
-            <span className="text-gradient-blue">MK</span>
+            <span className="text-gradient-blue">ZR</span>
             <span className="text-[#8899AA] text-sm ml-1 hidden sm:inline">/ I&C Eng</span>
           </span>
         </button>

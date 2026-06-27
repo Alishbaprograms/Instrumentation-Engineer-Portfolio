@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad | Instrumentation & Controls Engineer",
+  title: "Zainab Rafi | Instrumentation & Controls Engineer",
   description:
     "Designing reliable industrial automation systems, troubleshooting mission-critical equipment, and improving process reliability through modern control engineering.",
   keywords: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "GE Mark VIe",
     "Engro Fertilizers",
   ],
-  authors: [{ name: "Muhammad" }],
+  authors: [{ name: "Zainab Rafi" }],
 };
 
 export default function RootLayout({

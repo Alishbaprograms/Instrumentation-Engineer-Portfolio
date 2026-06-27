@@ -160,9 +160,9 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.35 }}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4"
         >
-          <span className="text-white">Muhammad</span>
+          <span className="text-white">Zainab</span>
           <br />
-          <span className="text-gradient-multi">Karam</span>
+          <span className="text-gradient-multi">Rafi</span>
         </motion.h1>
 
         {/* Typewriter Title */}

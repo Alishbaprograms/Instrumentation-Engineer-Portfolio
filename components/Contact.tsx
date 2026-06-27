@@ -22,22 +22,22 @@ const links = [
   {
     icon: <LinkedInIcon />,
     label: "LinkedIn",
-    value: "linkedin.com/in/muhammad-karam",
-    href: "https://www.linkedin.com/in/muhammad-karam",
+    value: "linkedin.com/in/zainab-rafi",
+    href: "https://www.linkedin.com/in/zainab-rafi",
     color: "#0A66C2",
   },
   {
     icon: <GithubIcon />,
     label: "GitHub",
-    value: "github.com/muhammad-karam",
-    href: "https://github.com/muhammad-karam",
+    value: "github.com/zainab-rafi",
+    href: "https://github.com/zainab-rafi",
     color: "#8899AA",
   },
   {
     icon: <Mail size={20} />,
     label: "Email",
-    value: "m.karam@engineer.com",
-    href: "mailto:m.karam@engineer.com",
+    value: "zainab.rafi@engineer.com",
+    href: "mailto:zainab.rafi@engineer.com",
     color: "#00C8FF",
   },
   {
